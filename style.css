@@ -1,0 +1,268 @@
+/* --- CONFIGURAÇÕES GERAIS --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+:root {
+    --cor-fundo: #0b1a10;
+    --verde-principal: #1f5f38;
+    --verde-limao: #39e75f;
+    --ouro-solar: #f4b41a;
+    --card-fundo: #142d1b;
+    --texto-claro: #ffffff;
+    --texto-subtil: #a2bca6;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--texto-claro);
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- CABEÇALHO (NAVBAR) --- */
+header {
+    background-color: rgba(11, 26, 16, 0.9);
+    border-bottom: 1px solid rgba(57, 231, 95, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: var(--texto-claro);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo span {
+    color: var(--verde-limao);
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.menu a {
+    color: var(--texto-subtil);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.menu a:hover {
+    color: var(--verde-limao);
+}
+
+/* --- SEÇÃO HERO (BOAS-VINDAS) --- */
+.hero {
+    padding: 100px 0 60px 0;
+    text-align: center;
+    position: relative;
+}
+
+/* Círculo luminoso de fundo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: var(--verde-principal);
+    filter: blur(120px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    background: linear-gradient(to right, var(--verde-limao), var(--ouro-solar));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--texto-subtil);
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+}
+
+/* BOTÕES */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn {
+    padding: 14px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-principal {
+    background-color: var(--verde-limao);
+    color: var(--cor-fundo);
+    box-shadow: 0 4px 15px rgba(57, 231, 95, 0.3);
+}
+
+.btn-principal:hover {
+    background-color: #2cc54e;
+    transform: translateY(-2px);
+}
+
+.btn-secundario {
+    border: 2px solid var(--texto-subtil);
+    color: var(--texto-claro);
+}
+
+.btn-secundario:hover {
+    border-color: var(--ouro-solar);
+    color: var(--ouro-solar);
+    transform: translateY(-2px);
+}
+
+/* --- SEÇÃO DE NÚMEROS / IMPACTO --- */
+.impacto-stats {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(135deg, var(--card-fundo), #0d2214);
+    padding: 40px;
+    border-radius: 16px;
+    margin: 40px 0;
+    border: 1px solid rgba(57, 231, 95, 0.1);
+    text-align: center;
+}
+
+.stat-item h2 {
+    font-size: 2.5rem;
+    color: var(--ouro-solar);
+}
+
+.stat-item p {
+    color: var(--texto-subtil);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- SEÇÃO DE CARDS (SOLUÇÕES) --- */
+.solucoes {
+    padding: 60px 0;
+}
+
+.solucoes-titulo {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.solucoes-titulo h2 {
+    font-size: 2rem;
+}
+
+.solucoes-titulo p {
+    color: var(--verde-limao);
+    font-weight: 600;
+}
+
+.grid-solucoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-solucao {
+    background-color: var(--card-fundo);
+    padding: 40px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-solucao:hover {
+    transform: translateY(-5px);
+    border-color: var(--verde-limao);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.card-solucao h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--ouro-solar);
+}
+
+.card-solucao p {
+    color: var(--texto-subtil);
+    font-size: 0.95rem;
+}
+
+/* --- RODAPÉ --- */
+footer {
+    background-color: #060e09;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--texto-subtil);
+    font-size: 0.9rem;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    .impacto-stats {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
